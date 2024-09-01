@@ -6,6 +6,7 @@ import TextMessage from './src/services/TextMessage';
 import image from "./assets/img/fe145850f3c9eb1c18ec12625a5e9cc1.jpg";
 import Form from './src/components/Form';
 import Main from './src/components/Main';
+import Props from './src/components/Props';
 
 export default function App() {
   return (
@@ -16,7 +17,10 @@ export default function App() {
       {/*<TextMessage/> */}
 
       {/* === CRIANDO UM FORMULÁRIO === */}
-      <Form/>
+      {/* <Form/> */}
+
+      {/* === PROPS === */}
+      <Props numero={4} text={"Um texto sendo passado por props"}/>
       
       
     </View>
