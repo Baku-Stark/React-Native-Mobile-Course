@@ -18,3 +18,18 @@ npx create-expo-app@latest react-native-course --template blank
 ```bash
 npx expo install react-dom react-native-web @expo/metro-runtime
 ```
+
+
+----
+
+## Base
+
+```js
+import {  } from 'react-native';
+
+export default function name(){
+    return(
+
+    )
+}
+```
