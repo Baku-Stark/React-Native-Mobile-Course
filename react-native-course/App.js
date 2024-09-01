@@ -1,13 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, Button } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import TextMessage from './src/services/TextMessage';
 
 import image from "./assets/img/fe145850f3c9eb1c18ec12625a5e9cc1.jpg";
-import Form from './src/components/Form';
+import Input from './src/components/Input';
 import Main from './src/components/Main';
 import Props from './src/components/Props';
 import MapMethod from './src/components/MapMethod';
+import ForMethod from './src/components/IfTestament';
+import Form from './src/components/Form';
 
 export default function App() {
   return (
@@ -17,16 +18,21 @@ export default function App() {
       {/*CHAMANDO UM OUTRO BLOCO DE CONTEÚDO */}
       {/*<TextMessage/> */}
 
-      {/* === CRIANDO UM FORMULÁRIO === */}
-      {/* <Form/> */}
+      {/* === TESTANDO INPUTS === */}
+      {/* <Input/> */}
 
       {/* === PROPS === */}
       {/* <Props numero={4} text={"Um texto sendo passado por props"}/> */}
 
 
       {/* === UTILIZANDO O MAP === */}
-      <MapMethod/>
-      
+      {/* <MapMethod/> */}
+
+      {/* === LOOPING FOR ===  */}
+      {/* <IfTestament age={24}/> */}
+
+      {/* === FORMULARIOS === */}
+      <Form/>
       
     </View>
   );

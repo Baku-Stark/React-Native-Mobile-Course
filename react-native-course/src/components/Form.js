@@ -1,57 +1,35 @@
-import { useState } from 'react';
-import { Button, Dimensions, StyleSheet, Text, TextInput, View } from 'react-native';
-const {width, height} = Dimensions.get('window');
+import React, { useState } from 'react';
+import { View, TextInput, Button, Alert } from 'react-native';
 
-export default function Form(){
-    //console.log(`Celphone Dimensions: ${Math.floor(width)} x ${Math.floor(height)}`);
+export default function Form() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
 
-    const [name, setName] = useState("");
-    const [age, setAge] = useState('');
+  const handleSubmit = () => {
+    Alert.alert('Form Submitted', `Name: ${name}, Email: ${email}`);
+  };
 
-    function mostrarInformacao(){
-        alert(
-            `Seu nome: ${name}\nIdade: ${age} anos`
-        )
-    }
-
-    return(
-        <View>
-            <Text>Form</Text>
-            <Text style={styles.label}>Nome</Text>
-            <TextInput
-                style={styles.inputs}
-                placeholder='Insira seu nome'
-                onChangeText={setName}
-                value={name}
-            >
-            </TextInput>
-
-            <Text style={styles.label}>Idade</Text>
-            <TextInput
-                style={styles.inputs}
-                placeholder='Insira sua idade (12, 13, ...)'
-                keyboardType='numeric'
-                onChangeText={setAge}
-                value={age}
-            >
-            </TextInput>
-            <Button title='Clique aqui' onPress={() => mostrarInformacao()}/>
-        </View>
-    )
+  return (
+    <View>
+      <TextInput
+        placeholder="Name"
+        value={name}
+        onChangeText={setName}
+        style={{ height: 40, borderColor: 'gray', borderWidth: 1, marginBottom: 10 }}
+        returnKeyType="next"
+        onSubmitEditing={() => this.emailInput.focus()}
+      />
+      <TextInput
+        placeholder="Email"
+        value={email}
+        onChangeText={setEmail}
+        keyboardType="email-address"
+        style={{ height: 40, borderColor: 'gray', borderWidth: 1, marginBottom: 10 }}
+        ref={(input) => { this.emailInput = input; }}
+        returnKeyType="done"
+        onSubmitEditing={handleSubmit}
+      />
+      <Button title="Submit" onPress={handleSubmit} />
+    </View>
+  );
 }
-
-const styles = StyleSheet.create({
-    label: {
-      color: "#fff",
-      fontWeight: "bold",
-      paddingTop: 10,
-      paddingBottom: 10,
-    },
-    inputs:{
-        width: width * 0.8, // VAI OCUPAR 80% DA TELA
-        height: 35,
-        padding: 10,
-        color: "#111",
-        backgroundColor: "#fff"
-    }
-  });
