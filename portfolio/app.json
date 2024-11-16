@@ -1,0 +1,28 @@
+{
+  "expo": {
+    "name": "portfolio",
+    "slug": "portfolio",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/satoru.jpeg",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/satoru.jpeg",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/satoru.jpeg",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "favicon": "./assets/satoru.jpeg"
+    }
+  }
+}
